@@ -11,7 +11,7 @@ model = YOLO(model_path)
 # -----------------------------
 # 2. Open thermal video
 # -----------------------------
-video_path = "thermal005.mp4"  # input video path
+video_path = "RR16.mp4"  # input video path
 cap = cv2.VideoCapture(video_path)
 
 if not cap.isOpened():
@@ -26,7 +26,7 @@ height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 fps    = cap.get(cv2.CAP_PROP_FPS)
 
 # Output video
-output_path = "thermaloutput005.mp4"
+output_path = "thermaloutput007.mp4"
 out = cv2.VideoWriter(
     output_path,
     cv2.VideoWriter_fourcc(*"mp4v"),
@@ -71,9 +71,9 @@ while True:
             gray_roi = person_roi
 
         # -----------------------------
-        # Map mean pixel intensity to Celsius (linear 34°C–40°C)
+        # Map mean pixel intensity to Celsius (linear 33°C–40°C)
         # --------------------------
-        temp_c = (np.mean(gray_roi) / 255) * (40 - 34) + 34 #not accurate mapping
+        temp_c = (np.mean(gray_roi) / 255) * (40 - 33) + 33 #not accurate mapping
 
 
         # Print to console
