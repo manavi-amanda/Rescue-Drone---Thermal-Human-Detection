@@ -98,3 +98,36 @@ The pretrained model is designed for **thermal human detection** and is download
 * Safety distance detection
 
 ---
+
+## API Service Setup and Testing
+
+### 🚀 Run the API Service
+
+To start the FastAPI server, run the following command from your project root:
+
+```bash
+python app_gateway.py
+```
+
+The server will start at:
+
+* API Base URL: `http://127.0.0.1:8000`
+* Interactive Documentation: `http://127.0.0.1:8000/docs`
+
+
+### 🧪 Testing the API
+
+You can test the detection and vital analysis endpoints using `curl` from your terminal.
+
+#### 1. Upload Video for Analysis
+
+Replace `thermal005.mp4` with the path to your own video file. This request starts the background processing task.
+
+```bash
+curl -X 'POST' 'http://127.0.0.1:8000/analyze/' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: multipart/form-data' \
+  -F 'file=@thermal005.mp4'
+```
+
+---
