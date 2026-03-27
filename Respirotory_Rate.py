@@ -19,7 +19,7 @@ def bandpass_filter(signal, fs, low=0.08, high=0.7):
 # 2. LOAD VIDEO
 # =========================================================
 
-video_path = "Devhan.mp4"
+video_path = r"Inputs/indoor1.MP4"
 cap = cv2.VideoCapture(video_path)
 #get the length of the video in seconds
 video_length = cap.get(cv2.CAP_PROP_FRAME_COUNT) / cap.get(cv2.CAP_PROP_FPS)
